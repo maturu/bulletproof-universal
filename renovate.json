@@ -6,9 +6,6 @@
     "group:recommended",
     "group:monorepos"
   ],
-  "monorepo": {
-    "enabled": true
-  },
   "labels": ["dependencies", "renovate"],
   "pin": {
     "automerge": false
