@@ -1,0 +1,42 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    "group:recommended",
+    "group:monorepos"
+  ],
+  "monorepo": {
+    "enabled": true
+  },
+  "labels": ["dependencies", "renovate"],
+  "pin": {
+    "automerge": false
+  },
+  "pinDigest": {
+    "automerge": false
+  },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "packagePatterns": ["^react$","^react-dom$","^@types/react","^@types/react-dom"],
+      "paths": ["apps/*","packages/*"], 
+      "groupName": "React 系ライブラリの更新"
+    },
+    {
+      "packagePatterns": ["*"],
+      "paths": ["apps/*","packages/*"],
+      "groupName": "全体共通依存"
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "branch",
+      "paths": ["apps/*", "packages/*"]
+    }
+  ],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5
+}
