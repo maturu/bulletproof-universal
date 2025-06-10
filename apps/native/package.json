@@ -4,10 +4,10 @@
   "main": "expo-router/entry",
   "private": true,
   "scripts": {
-    "start": "expo start",
-    "dev": "BROWSER=none expo start --web",
-    "android": "expo start --android",
-    "ios": "expo start --ios"
+    "dev": "expo start -c",
+    "build": "expo prebuild",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
@@ -18,6 +18,7 @@
     "@repo/ui": "workspace:*",
     "@repo/ui-config": "workspace:*",
     "babel-plugin-module-resolver": "^5.0.2",
+    "burnt": "^0.13.0",
     "expo": "~53.0.8",
     "expo-constants": "^17.1.6",
     "expo-dev-client": "^5.2.0",
