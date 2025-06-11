@@ -14,8 +14,8 @@
   "scripts": {
     "build": "tamagui-build --skip-types",
     "dev": "pnpm build --watch",
-    "lint": "eslint . --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "lint": "eslint --ext ts --report-unused-disable-directives --max-warnings 0",
+    "types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@tamagui/animations-react-native": "^1.126.14",
