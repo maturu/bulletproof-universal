@@ -30,7 +30,7 @@ export const config = [
     ignores: ['dist/**'],
   },
   {
-    files: ['**/*/*.d.ts'],
+    files: ['**/*.d.ts'],
     rules: {
       '@typescript-eslint/no-empty-object-type': 'off',
     },

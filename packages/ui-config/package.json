@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tamagui-build --skip-types",
     "dev": "pnpm build --watch",
-    "lint": "eslint --ext ts --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint --ext .ts --report-unused-disable-directives --max-warnings 0",
     "types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
