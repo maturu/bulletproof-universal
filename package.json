@@ -6,7 +6,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "prettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{ts,tsx,md}\" --cache",
+    "prettier": "prettier --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{ts,tsx,js,mjs,jsx,json,md}\" --cache",
     "format": "pnpm prettier --write && pnpm lint -- --fix",
     "check-types": "turbo run types",
     "check-format": "pnpm prettier --list-different"

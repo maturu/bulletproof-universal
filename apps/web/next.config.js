@@ -1,12 +1,12 @@
-const { withTamagui } = require('@tamagui/next-plugin');
-const { join } = require("node:path");
+const { withTamagui } = require('@tamagui/next-plugin')
+const { join } = require('node:path')
 
 const boolVals = {
   true: true,
   false: false,
 }
 
-const disableExtraction = 
+const disableExtraction =
   boolVals[process.env.DISABLE_EXTRACTION] ?? process.env.NODE_ENV == 'development'
 
 const plugins = [
@@ -19,11 +19,11 @@ const plugins = [
     logTimings: true,
     disableExtraction,
     shouldExtract: (path) => {
-      if (path.includes(join('packages', 'app'))) return true;
+      if (path.includes(join('packages', 'app'))) return true
     },
     disableThemesBundleOptimize: true,
-    excludeReactNativeWebExports: ['Switch', 'ProgressBar', 'Picker', 'CheckBox', 'Touchable']
-  })
+    excludeReactNativeWebExports: ['Switch', 'ProgressBar', 'Picker', 'CheckBox', 'Touchable'],
+  }),
 ]
 
 module.exports = () => {
@@ -37,17 +37,17 @@ module.exports = () => {
       'react-native-web',
       'expo-linking',
       'expo-constants',
-      'expo-modules-core'
+      'expo-modules-core',
     ],
     experimental: {
-      scrollRestoration: true
-    }
+      scrollRestoration: true,
+    },
   }
 
   for (const plugin of plugins) {
     res = {
       ...res,
-      ...plugin(res)
+      ...plugin(res),
     }
   }
 

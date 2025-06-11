@@ -1,11 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    ":timezone(Asia/Tokyo)",
-    "group:recommended",
-    "group:monorepos"
-  ],
+  "extends": ["config:base", ":timezone(Asia/Tokyo)", "group:recommended", "group:monorepos"],
   "labels": ["dependencies", "renovate"],
   "pin": {
     "automerge": false
@@ -18,13 +13,13 @@
   },
   "packageRules": [
     {
-      "packagePatterns": ["^react$","^react-dom$","^@types/react","^@types/react-dom"],
-      "paths": ["apps/*","packages/*"], 
+      "packagePatterns": ["^react$", "^react-dom$", "^@types/react", "^@types/react-dom"],
+      "paths": ["apps/*", "packages/*"],
       "groupName": "React 系ライブラリの更新"
     },
     {
       "packagePatterns": ["*"],
-      "paths": ["apps/*","packages/*"],
+      "paths": ["apps/*", "packages/*"],
       "groupName": "全体共通依存"
     },
     {

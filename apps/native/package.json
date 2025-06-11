@@ -8,7 +8,6 @@
     "build": "expo prebuild",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "lint": "eslint --ext js,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {

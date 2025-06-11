@@ -4,6 +4,6 @@
     "outDir": "dist",
     "composite": true
   },
-  "include": ["src", "../ui-config/src/tamagui.config.ts"],
+  "include": ["src", "../ui-config/src"],
   "exclude": ["node_modules", "dist"]
 }

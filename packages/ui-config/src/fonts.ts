@@ -1,4 +1,4 @@
-import { createInterFont } from "@tamagui/font-inter"
+import { createInterFont } from '@tamagui/font-inter'
 
 export const heading = createInterFont({
   size: {
