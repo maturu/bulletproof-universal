@@ -1,0 +1,37 @@
+{
+  "name": "@repo/app",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@react-navigation/native": "^7.1.10",
+    "@repo/ui": "workspace:*",
+    "@repo/ui-config": "workspace:*",
+    "@tamagui/animations-react-native": "^1.126.14",
+    "@tamagui/colors": "^1.126.14",
+    "@tamagui/font-inter": "^1.126.14",
+    "@tamagui/lucide-icons": "^1.126.14",
+    "@tamagui/next-theme": "^1.126.14",
+    "@tamagui/shorthands": "^1.126.14",
+    "@tamagui/themes": "^1.126.14",
+    "expo-constants": "^17.1.6",
+    "expo-linking": "^7.1.5",
+    "react-native-safe-area-context": "^5.4.1",
+    "solito": "^4.4.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^19.1.6",
+    "@types/react-native": "^0.73.0",
+    "eslint": "^9.28.0",
+    "typescript": "5.8.2"
+  }
+}

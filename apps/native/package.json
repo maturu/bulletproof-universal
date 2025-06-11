@@ -1,26 +1,57 @@
 {
   "name": "native",
   "version": "0.1.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "private": true,
   "scripts": {
-    "start": "expo start",
-    "dev": "BROWSER=none expo start --web",
-    "android": "expo start --android",
-    "ios": "expo start --ios"
+    "dev": "expo start -c",
+    "build": "expo prebuild",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "dependencies": {
-    "expo": "~53.0.10",
+    "@babel/runtime": "^7.27.6",
+    "@expo/config-plugins": "^10.0.2",
+    "@react-navigation/bottom-tabs": "^7.3.14",
+    "@react-navigation/native": "^7.1.10",
+    "@repo/app": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@repo/ui-config": "workspace:*",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "burnt": "^0.13.0",
+    "expo": "~53.0.8",
+    "expo-constants": "^17.1.6",
+    "expo-dev-client": "^5.2.0",
+    "expo-font": "^13.3.1",
+    "expo-linear-gradient": "^14.1.5",
+    "expo-linking": "^7.1.5",
     "expo-router": "^5.0.7",
+    "expo-splash-screen": "^0.30.9",
     "expo-status-bar": "~2.2.3",
+    "expo-updates": "^0.28.14",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.3",
+    "react-native-gesture-handler": "^2.25.0",
+    "react-native-safe-area-context": "^5.4.1",
+    "react-native-screens": "^4.11.1",
+    "react-native-svg": "^15.12.0",
     "react-native-web": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@expo/metro-config": "^0.20.14",
+    "@tamagui/babel-plugin": "^1.126.14",
     "@types/react": "~19.0.10",
+    "metro-minify-terser": "^0.82.4",
     "typescript": "~5.8.3"
+  },
+  "resolutions": {
+    "metro": "0.81.0",
+    "metro-resolver": "0.81.0"
+  },
+  "overrides": {
+    "metro": "0.81.0",
+    "metro-resolver": "0.81.0"
   }
 }

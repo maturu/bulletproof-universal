@@ -1,0 +1,35 @@
+{
+  "name": "@repo/ui-config",
+  "version": "0.0.1",
+  "sideEffects": [
+    "*.css"
+  ],
+  "private": true,
+  "types": "./src",
+  "main": "src/index.ts",
+  "files": [
+    "types",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tamagui-build --skip-types",
+    "dev": "pnpm build --watch",
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tamagui/animations-react-native": "^1.126.14",
+    "@tamagui/config": "^1.126.14",
+    "@tamagui/font-inter": "^1.126.14",
+    "@tamagui/shorthands": "^1.126.14",
+    "@tamagui/themes": "^1.126.14",
+    "tamagui": "^1.126.14"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tamagui/build": "^1.126.14",
+    "eslint": "^9.28.0",
+    "typescript": "5.8.2"
+  }
+}
