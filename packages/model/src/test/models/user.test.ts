@@ -12,7 +12,7 @@ describe('user', async () => {
       const user = await userFactory.create()
       const response = await userService.get(user.id)
 
-      expect(response).exist
+      expect(response).toBeDefined()
     })
   })
 
