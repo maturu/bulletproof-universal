@@ -10,8 +10,8 @@ generator zod {
 }
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "generated/prisma"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
 }
 
 generator fabbrica {

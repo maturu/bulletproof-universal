@@ -41,4 +41,10 @@ export const config = [
       '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
+  {
+    files: ['**/*.test.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-expressions': 'off',
+    },
+  },
 ]

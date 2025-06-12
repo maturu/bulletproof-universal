@@ -1,6 +1,6 @@
-import type { User } from "../prisma/index.js";
-import type { Post } from "../prisma/index.js";
-import type { Prisma, PrismaClient } from "../prisma/index.js";
+import type { User } from "@prisma/client";
+import type { Post } from "@prisma/client";
+import type { Prisma, PrismaClient } from "@prisma/client";
 import { createInitializer, createScreener, getScalarFieldValueGenerator, normalizeResolver, normalizeList, getSequenceCounter, createCallbackChain, destructure } from "@quramy/prisma-fabbrica/lib/internal";
 import type { ModelWithFields, Resolver, } from "@quramy/prisma-fabbrica/lib/internal";
 export { resetSequence, registerScalarFieldValueGenerator, resetScalarFieldValueGenerator } from "@quramy/prisma-fabbrica/lib/internal";

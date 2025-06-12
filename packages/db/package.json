@@ -1,9 +1,10 @@
 {
   "name": "@repo/db",
   "version": "0.0.0",
-  "main": "lib/prisma.ts",
   "exports": {
-    "./client": "./lib/prisma.ts"
+    "./repositories": "./src/repositores/index.ts",
+    "./services": "./src/services/index.ts",
+    "./schema": "./prisma/generated/zod/index.ts"
   },
   "private": true,
   "scripts": {
@@ -16,18 +17,22 @@
     "db:reset": "prisma migrate reset",
     "db:seed": "prisma db seed",
     "lint": "eslint --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
-    "types": "tsc --project tsconfig.json --pretty --noEmit"
+    "types": "tsc --project tsconfig.json --pretty --noEmit",
+    "test": "vitest -c ./vitest.config.ts run"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
     "@quramy/prisma-fabbrica": "^2.3.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "eslint": "^9.28.0",
     "tsx": "^4.20.1",
-    "typescript": "5.8.2"
+    "typescript": "5.8.2",
+    "vitest": "^3.2.3",
+    "vitest-environment-vprisma": "^1.3.0"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
