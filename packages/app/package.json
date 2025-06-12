@@ -7,8 +7,9 @@
     "*.css"
   ],
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
+    "lint": "eslint --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@react-navigation/native": "^7.1.10",

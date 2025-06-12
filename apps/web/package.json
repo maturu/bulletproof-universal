@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf .next && rm -rf .tamagui && rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "types": "tsc --project tsconfig.node.json --pretty --noEmit"
   },
   "dependencies": {
     "@repo/app": "workspace:*",

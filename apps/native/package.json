@@ -4,10 +4,12 @@
   "main": "expo-router/entry",
   "private": true,
   "scripts": {
+    "clean": "rm -rf .expo && rm -rf .tamagui && rm -rf node_modules && rm -rf .turbo",
     "dev": "expo start -c",
     "build": "expo prebuild",
     "android": "expo run:android",
-    "ios": "expo run:ios"
+    "ios": "expo run:ios",
+    "types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
@@ -45,13 +47,5 @@
     "@types/react": "~19.0.10",
     "metro-minify-terser": "^0.82.4",
     "typescript": "~5.8.3"
-  },
-  "resolutions": {
-    "metro": "0.81.0",
-    "metro-resolver": "0.81.0"
-  },
-  "overrides": {
-    "metro": "0.81.0",
-    "metro-resolver": "0.81.0"
   }
 }

@@ -1,6 +1,6 @@
-import { createInterFont } from "@tamagui/font-inter"
+import { createInterFont } from '@tamagui/font-inter'
 
-export const heading = createInterFont({
+export const headingFont = createInterFont({
   size: {
     6: 15,
   },
@@ -32,7 +32,7 @@ export const heading = createInterFont({
   },
 })
 
-export const body = createInterFont(
+export const bodyFont = createInterFont(
   {
     face: {
       700: { normal: 'InterBold' },

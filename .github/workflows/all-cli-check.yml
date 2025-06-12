@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+env:
+  NODE_OPTIONS: --max-old-space-size=4096
+jobs:
+  all-cli-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache for Turbo
+        uses: rharkor/caching-for-turbo@v1.5
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.6.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.5.1'
+          cache: 'pnpm'
+
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm check-types
+      - run: pnpm check-format
+      - run: pnpm lint
