@@ -20,12 +20,7 @@
     {
       "matchFileNames": ["apps/*", "packages/*"],
       "groupName": "React 系ライブラリの更新",
-      "matchPackageNames": [
-        "/^react$/",
-        "/^react-dom$/",
-        "/^@types/react/",
-        "/^@types/react-dom/"
-      ]
+      "matchPackageNames": ["/^react$/", "/^react-dom$/", "/^@types/react/", "/^@types/react-dom/"]
     },
     {
       "matchFileNames": ["apps/*", "packages/*"],
