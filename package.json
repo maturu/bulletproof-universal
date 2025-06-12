@@ -1,5 +1,5 @@
 {
-  "name": "bulletproof-next-turbo",
+  "name": "bulletproof-universal",
   "private": true,
   "scripts": {
     "prepare": "husky install",
