@@ -2,7 +2,7 @@
   "name": "@repo/model",
   "version": "0.0.0",
   "exports": {
-    "./repositories": "./src/repositores/index.ts",
+    "./repositories": "./src/repositories/index.ts",
     "./services": "./src/services/index.ts",
     "./schema": "./prisma/generated/zod/index.ts"
   },

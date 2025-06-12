@@ -3,7 +3,7 @@ import { createUserRepository } from '@/repositories/user'
 import { createUserService } from '@/services/user'
 import { userFactory } from '@/test/factories/user'
 
-describe('user', async () => {
+describe('user', () => {
   const userRepository = createUserRepository()
   const userService = createUserService(userRepository)
 
@@ -35,7 +35,7 @@ describe('user', async () => {
     })
   })
 
-  describe('.destory', () => {
+  describe('.destroy', () => {
     it('response user data', async () => {
       const user = await userFactory.create()
       await userService.destroy(user.id)
