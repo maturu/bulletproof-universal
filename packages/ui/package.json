@@ -12,6 +12,7 @@
     "dist"
   ],
   "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "build": "tamagui-build --skip-types",
     "dev": "pnpm build --watch",
     "lint": "eslint --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
@@ -21,12 +22,16 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tamagui/build": "^1.126.14",
+    "@types/react": "^19.1.8",
     "eslint": "^9.28.0",
     "typescript": "5.8.2"
   },
   "dependencies": {
     "@repo/ui-config": "workspace:*",
+    "@tamagui/next-theme": "^1.126.14",
     "@tamagui/toast": "^1.126.14",
+    "expo-constants": "^17.1.6",
+    "react": "^19.1.0",
     "tamagui": "^1.126.14"
   }
 }
