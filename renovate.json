@@ -1,6 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":timezone(Asia/Tokyo)", "group:recommended", "group:monorepos"],
+  "extends": [
+    "config:recommended",
+    ":timezone(Asia/Tokyo)",
+    "group:recommended",
+    "group:monorepos"
+  ],
   "labels": ["dependencies", "renovate"],
   "pin": {
     "automerge": false
@@ -13,20 +18,20 @@
   },
   "packageRules": [
     {
-      "packagePatterns": ["^react$", "^react-dom$", "^@types/react", "^@types/react-dom"],
-      "paths": ["apps/*", "packages/*"],
-      "groupName": "React 系ライブラリの更新"
+      "matchFileNames": ["apps/*", "packages/*"],
+      "groupName": "React 系ライブラリの更新",
+      "matchPackageNames": ["/^react$/", "/^react-dom$/", "/^@types/react/", "/^@types/react-dom/"]
     },
     {
-      "packagePatterns": ["*"],
-      "paths": ["apps/*", "packages/*"],
-      "groupName": "全体共通依存"
+      "matchFileNames": ["apps/*", "packages/*"],
+      "groupName": "全体共通依存",
+      "matchPackageNames": ["*"]
     },
     {
       "matchUpdateTypes": ["patch"],
       "automerge": true,
       "automergeType": "branch",
-      "paths": ["apps/*", "packages/*"]
+      "matchFileNames": ["apps/*", "packages/*"]
     }
   ],
   "prHourlyLimit": 2,
