@@ -10,6 +10,6 @@
       "@client/*": ["prisma/*"]
     }
   },
-  "include": ["src", "vitest.config.ts", "vitest.setup.ts", "prisma"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

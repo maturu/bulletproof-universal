@@ -2,8 +2,7 @@
   "name": "@repo/model",
   "version": "0.0.0",
   "exports": {
-    "./repositories": "./src/repositories/index.ts",
-    "./services": "./src/services/index.ts",
+    ".": "./src/index.ts",
     "./schema": "./prisma/generated/zod/index.ts"
   },
   "private": true,
@@ -17,7 +16,7 @@
     "db:reset": "prisma migrate reset",
     "db:seed": "prisma db seed",
     "lint": "eslint --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
-    "types": "tsc --project tsconfig.json --pretty --noEmit",
+    "types": "tsc --project tsconfig.node.json --pretty --noEmit",
     "test": "vitest -c ./vitest.config.ts run"
   },
   "prisma": {

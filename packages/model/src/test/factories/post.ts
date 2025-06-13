@@ -1,6 +1,6 @@
-import { definePostFactory, UserFactoryInterface } from '../../../prisma/generated/fabbrica'
-import { userFactory } from './user'
+import { UserFactoryInterface, definePostFactory } from '@client/generated/fabbrica'
 import { faker } from '@faker-js/faker'
+import { userFactory } from './user'
 
 const getUserFactory = (): UserFactoryInterface => userFactory
 

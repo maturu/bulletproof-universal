@@ -1,5 +1,5 @@
 const { withTamagui } = require('@tamagui/next-plugin')
-const { join } = require('node:path')
+const { join, resolve } = require('node:path')
 
 const boolVals = {
   true: true,
@@ -41,6 +41,13 @@ module.exports = () => {
     ],
     experimental: {
       scrollRestoration: true,
+    },
+    webpack: (config) => {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@/lib': resolve(__dirname, '../../packages/model/src/lib'),
+      }
+      return config
     },
   }
 

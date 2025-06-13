@@ -8,6 +8,7 @@ import {
   isWeb,
 } from '@repo/ui'
 import { ToastViewport } from './toast-viewport'
+import { TRPCProvider } from './trpc-provider'
 
 export function Provider({
   children,
@@ -20,9 +21,11 @@ export function Provider({
   return (
     <TamaguiProvider config={config} defaultTheme={theme} {...rest}>
       <ToastProvider swipeDirection="horizontal" duration={6000} native={isWeb ? [] : ['mobile']}>
-        {children}
-        <CustomToast />
-        <ToastViewport />
+        <TRPCProvider>
+          {children}
+          <CustomToast />
+          <ToastViewport />
+        </TRPCProvider>
       </ToastProvider>
     </TamaguiProvider>
   )
