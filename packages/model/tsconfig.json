@@ -6,10 +6,9 @@
     "strictNullChecks": true,
     "types": ["vitest/globals", "vitest-environment-vprisma"],
     "paths": {
-      "@/*": ["src/*"],
-      "@client/*": ["prisma/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src", "vitest.config.ts", "vitest.setup.ts", "prisma"],
+  "include": ["src", "vitest.config.ts", "vitest.setup.ts"],
   "exclude": ["node_modules"]
 }

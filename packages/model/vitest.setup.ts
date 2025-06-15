@@ -1,4 +1,4 @@
-import { initialize, resetSequence } from '@client/generated/fabbrica'
+import { initialize, resetSequence } from '@/prisma/generated/fabbrica'
 
 beforeAll(() => {
   vi.mock('@/lib/prisma', async () => ({

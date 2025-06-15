@@ -1,4 +1,4 @@
-import { UserFactoryInterface, definePostFactory } from '@client/generated/fabbrica'
+import { UserFactoryInterface, definePostFactory } from '@/prisma/generated/fabbrica'
 import { faker } from '@faker-js/faker'
 import { userFactory } from './user'
 
