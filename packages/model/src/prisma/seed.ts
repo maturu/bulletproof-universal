@@ -13,4 +13,4 @@ export async function main() {
   }
 }
 
-main()
+main().catch(console.error).finally(() => prisma.$disconnect())
