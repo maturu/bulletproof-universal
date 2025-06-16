@@ -5,7 +5,7 @@
   "tasks": {
     "build": {
       "env": ["DISABLE_EXTRACTION", "NODE_ENV", "EAS_BUILD_PLATFORM", "DATABASE_URL"],
-      "dependsOn": ["^build", "@repo/model#db:generate"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [
         ".next/**",
@@ -29,7 +29,6 @@
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "db:generate": {}
+    }
   }
 }

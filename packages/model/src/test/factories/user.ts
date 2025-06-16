@@ -1,4 +1,4 @@
-import { defineUserFactory } from '@client/generated/fabbrica'
+import { defineUserFactory } from '@/prisma/generated/fabbrica'
 import { faker } from '@faker-js/faker'
 
 export const userFactory = defineUserFactory({

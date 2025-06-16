@@ -1,9 +1,9 @@
+import { UserRepository } from '@/repositories'
 import { User, Prisma } from '@prisma/client'
-import { UserRepository } from '@/repositories/user'
 
 export const createUserService = (userRepository: UserRepository) => {
   return {
-    get: async (id: User['id']) => {
+    get: async (id: User['id']): Promise<User | null> => {
       return await userRepository.findById(id)
     },
     create: async (data: Prisma.UserCreateInput) => {

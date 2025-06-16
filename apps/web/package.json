@@ -11,6 +11,7 @@
     "types": "tsc --project tsconfig.node.json --pretty --noEmit"
   },
   "dependencies": {
+    "@repo/api": "workspace:*",
     "@repo/app": "workspace:*",
     "@repo/ui": "workspace:*",
     "@repo/ui-config": "workspace:*",
@@ -19,12 +20,14 @@
     "react-dom": "^19.1.0",
     "react-native": "0.79.3",
     "react-native-web": "^0.20.0",
-    "tamagui": "^1.126.14"
+    "tamagui": "^1.126.14",
+    "zod": "^3.25.62"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tamagui/next-plugin": "^1.126.14",
+    "@trpc/server": "^11.3.1",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",

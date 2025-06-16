@@ -4,6 +4,7 @@ import { useParams } from 'solito/navigation'
 
 export default function Screen() {
   const { id } = useParams()
+
   return (
     <>
       <Stack.Screen

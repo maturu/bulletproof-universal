@@ -19,7 +19,7 @@ import { useLink } from 'solito/navigation'
 export function HomeScreen({ pagesMode = false }: { pagesMode?: boolean }) {
   const linkTarget = pagesMode ? '/pages-example-user' : '/user'
   const linkProps = useLink({
-    href: `${linkTarget}/nate`,
+    href: `${linkTarget}/1`,
   })
 
   return (

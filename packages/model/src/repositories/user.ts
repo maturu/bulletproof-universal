@@ -1,5 +1,5 @@
-import { User, Prisma } from '@prisma/client'
 import prisma from '@/lib/prisma'
+import { User, Prisma } from '@prisma/client'
 
 export const createUserRepository = () => {
   return {

@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
-import { createUserRepository } from '@/repositories/user'
-import { createUserService } from '@/services/user'
-import { userFactory } from '@/test/factories/user'
+import { createUserRepository } from '@/repositories'
+import { createUserService } from '@/services'
+import { userFactory } from '../factories/user'
 
 describe('user', () => {
   const userRepository = createUserRepository()
