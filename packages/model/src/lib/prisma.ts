@@ -1,7 +1,14 @@
 import { PrismaClient } from '@prisma/client'
 
 const prismaClientSingleton = () => {
-  return new PrismaClient({ log: process.env.NODE_ENV == 'development' ? ['query'] : undefined })
+  const client = new PrismaClient({
+    log: process.env.NODE_ENV === 'development' ? ['query'] : undefined,
+  })
+  // 接続はインスタンス生成時に 1 度だけ行う
+  client.$connect().catch((e) => {
+    console.error('[Prisma] Connection error:', e)
+  })
+  return client
 }
 
 let prisma: PrismaClient
@@ -18,7 +25,6 @@ if (process.env.NODE_ENV === 'production') {
     global.__db__ = prismaClientSingleton()
   }
   prisma = global.__db__
-  prisma.$connect()
 }
 
 export default prisma
