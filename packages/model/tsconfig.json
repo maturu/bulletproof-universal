@@ -4,6 +4,10 @@
     "baseUrl": ".",
     "strict": true,
     "strictNullChecks": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "allowJs": true,
     "types": ["vitest/globals", "vitest-environment-vprisma"],
     "paths": {
       "@/*": ["src/*"]

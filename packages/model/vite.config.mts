@@ -1,13 +1,9 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [
-    dts({ tsconfigPath: './tsconfig.node.json' }),
-    tsconfigPaths({ root: __dirname, projects: ['./tsconfig.node.json'] }),
-  ],
+  plugins: [dts()],
   ssr: {
     external: ['@prisma/client'],
   },

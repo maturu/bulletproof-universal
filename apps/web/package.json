@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
-    "types": "tsc --project tsconfig.node.json --pretty --noEmit"
+    "types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@repo/api": "workspace:*",
