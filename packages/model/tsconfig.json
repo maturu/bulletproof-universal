@@ -6,7 +6,7 @@
     "strictNullChecks": true,
     "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationDir": "./types",
+    "declarationDir": "./dist",
     "allowJs": true,
     "types": ["vitest/globals", "vitest-environment-vprisma"],
     "paths": {
