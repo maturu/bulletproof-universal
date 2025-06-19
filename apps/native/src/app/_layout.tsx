@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useColorScheme } from 'react-native'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
@@ -6,6 +6,7 @@ import { SplashScreen, Stack } from 'expo-router'
 import { Provider } from '@repo/app/src/provider'
 import { NativeToast } from '@repo/ui'
 import { Auth0Provider } from 'react-native-auth0'
+import { useAuth } from '../hooks/auth'
 
 export const unstable_settings = {
   // Ensure that reloading on `/user` keeps a back button present.
@@ -21,6 +22,8 @@ export default function App() {
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   })
 
+  const colorScheme = useColorScheme()
+
   useEffect(() => {
     if (interLoaded || interError) {
       // Hide the splash screen after the fonts have loaded (or an error was returned) and the UI is ready.
@@ -32,12 +35,6 @@ export default function App() {
     return null
   }
 
-  return <RootLayoutNav />
-}
-
-function RootLayoutNav() {
-  const colorScheme = useColorScheme()
-
   return (
     <Provider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
@@ -45,10 +42,32 @@ function RootLayoutNav() {
           domain={process.env.EXPO_PUBLIC_AUTH0_DOMAIN}
           clientId={process.env.EXPO_PUBLIC_AUTH0_CLIENT_ID}
         >
-          <Stack />
+          <RootLayoutNav />
           <NativeToast />
         </Auth0Provider>
       </ThemeProvider>
     </Provider>
+  )
+}
+
+function RootLayoutNav() {
+  const { user, isLoading } = useAuth()
+  const isLoggedIn = useMemo(() => !!user, [user])
+
+  if (isLoading) return
+
+  return (
+    <Stack>
+      {/* unauthenticated */}
+      <Stack.Protected guard={!isLoggedIn}>
+        <Stack.Screen name="signin" />
+      </Stack.Protected>
+
+      {/* authenticated */}
+      <Stack.Protected guard={isLoggedIn}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(protected)/user/[id]" />
+      </Stack.Protected>
+    </Stack>
   )
 }
