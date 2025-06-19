@@ -1,6 +1,6 @@
 import { NextAuthConfig } from 'next-auth'
-import GitHub from 'next-auth/providers/github'
+import Auth0 from 'next-auth/providers/auth0'
 
 export default {
-  providers: [GitHub],
+  providers: [Auth0],
 } satisfies NextAuthConfig
