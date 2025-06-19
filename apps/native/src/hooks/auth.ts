@@ -35,5 +35,5 @@ export function useAuth() {
 
   const signOut = useCallback(auth0.clearSession, [])
 
-  return { signIn, signOut }
+  return { signIn, signOut, user: auth0.user, isLoading: auth0.isLoading }
 }

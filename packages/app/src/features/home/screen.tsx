@@ -15,12 +15,7 @@ import { useState } from 'react'
 import { Platform } from 'react-native'
 import { useLink } from 'solito/navigation'
 
-interface HomeScreenProps {
-  handleSignIn: () => void
-  handleSignOut: () => void
-}
-
-export function HomeScreen({ handleSignIn, handleSignOut }: HomeScreenProps) {
+export function HomeScreen() {
   const linkProps = useLink({
     href: `/user/cmc064es50000u2obi50h9094`,
   })
@@ -28,19 +23,6 @@ export function HomeScreen({ handleSignIn, handleSignOut }: HomeScreenProps) {
   return (
     <YStack flex={1} justify="center" items="center" gap="$8" p="$4" bg="$background">
       {Platform.OS === 'web' && <SwitchThemeButton />}
-
-      <XStack
-        position="absolute"
-        width="100%"
-        t="$6"
-        gap="$6"
-        justify="center"
-        flexWrap="wrap"
-        $sm={{ position: 'relative', t: 0 }}
-      >
-        <Button onPress={handleSignIn}>Sign In</Button>
-        <Button onPress={handleSignOut}>Sign Out</Button>
-      </XStack>
 
       <YStack gap="$4">
         <H1 text="center" color="$color12">
