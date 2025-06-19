@@ -8,7 +8,7 @@ export function UserDetailScreen({ id }: { id: string }) {
   if (!id) {
     return null
   }
-  const { data } = client.userById.useQuery({ id })
+  const { data } = client.user.findById.useQuery({ id })
 
   return (
     <YStack flex={1} justify="center" items="center" gap="$4" bg="$background">
