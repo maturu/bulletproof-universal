@@ -3,7 +3,12 @@ import { ChevronLeft } from '@tamagui/lucide-icons'
 import { useRouter } from 'solito/navigation'
 import { client } from '../../lib/trpc'
 
-export function UserDetailScreen({ id }: { id: string }) {
+interface UserDetailScreenProps {
+  id: string
+  handleSignOut: () => void
+}
+
+export function UserDetailScreen({ id, handleSignOut }: UserDetailScreenProps) {
   const router = useRouter()
   if (!id) {
     return null
@@ -26,6 +31,7 @@ export function UserDetailScreen({ id }: { id: string }) {
       <Button icon={ChevronLeft} onPress={() => router.back()}>
         Go Home
       </Button>
+      <Button onPress={handleSignOut}>Sign Out</Button>
     </YStack>
   )
 }
