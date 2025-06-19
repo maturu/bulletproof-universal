@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { Provider } from '@repo/app/src/provider'
 import { NativeToast } from '@repo/ui'
+import { Auth0Provider } from 'react-native-auth0'
 
 export const unstable_settings = {
   // Ensure that reloading on `/user` keeps a back button present.
@@ -40,8 +41,13 @@ function RootLayoutNav() {
   return (
     <Provider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack />
-        <NativeToast />
+        <Auth0Provider
+          domain={process.env.EXPO_PUBLIC_AUTH0_DOMAIN}
+          clientId={process.env.EXPO_PUBLIC_AUTH0_CLIENT_ID}
+        >
+          <Stack />
+          <NativeToast />
+        </Auth0Provider>
       </ThemeProvider>
     </Provider>
   )

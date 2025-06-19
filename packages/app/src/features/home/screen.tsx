@@ -5,7 +5,6 @@ import {
   Paragraph,
   Separator,
   Sheet,
-  SwitchRouterButton,
   SwitchThemeButton,
   useToastController,
   XStack,
@@ -16,14 +15,20 @@ import { useState } from 'react'
 import { Platform } from 'react-native'
 import { useLink } from 'solito/navigation'
 
-export function HomeScreen({ pagesMode = false }: { pagesMode?: boolean }) {
-  const linkTarget = pagesMode ? '/pages-example-user' : '/user'
+interface HomeScreenProps {
+  handleSignIn: () => void
+  handleSignOut: () => void
+}
+
+export function HomeScreen({ handleSignIn, handleSignOut }: HomeScreenProps) {
   const linkProps = useLink({
-    href: `${linkTarget}/1`,
+    href: `/user/cmc064es50000u2obi50h9094`,
   })
 
   return (
     <YStack flex={1} justify="center" items="center" gap="$8" p="$4" bg="$background">
+      {Platform.OS === 'web' && <SwitchThemeButton />}
+
       <XStack
         position="absolute"
         width="100%"
@@ -33,12 +38,8 @@ export function HomeScreen({ pagesMode = false }: { pagesMode?: boolean }) {
         flexWrap="wrap"
         $sm={{ position: 'relative', t: 0 }}
       >
-        {Platform.OS === 'web' && (
-          <>
-            <SwitchRouterButton pagesMode={pagesMode} />
-            <SwitchThemeButton />
-          </>
-        )}
+        <Button onPress={handleSignIn}>Sign In</Button>
+        <Button onPress={handleSignOut}>Sign Out</Button>
       </XStack>
 
       <YStack gap="$4">
